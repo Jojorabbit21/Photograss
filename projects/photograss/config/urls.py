@@ -17,7 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from main import views
 
+admin.site.site_header = "Welcome Dasom!" 
+admin.site.site_title = "Photograss"
+admin.site.index_title = "Photograss Admin"
+
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
 ]
