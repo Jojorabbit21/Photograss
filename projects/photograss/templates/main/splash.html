@@ -5,12 +5,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/splash.css' %}">
-    <title>Photograss - Leedasom photography</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_splash.css' %}">
+    <title>Photograss - Index</title>
   </head>
   <body>
     <div class="main">
-      <h1>Photograss</h1>
+      <a href="{% url 'main:home' %}">Photograss</a>
       <video class="splash-video" muted autoplay loop>
         <source src="{% static "main/splash3.mp4" %}" type="video/mp4">
         <strong>Your browser does not support the video tag.</strong>

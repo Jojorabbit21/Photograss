@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+}
+
+.swiper {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-pagination-bullet { 
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgba(255,255,255,0.6);
+}
+
+/* Navigation Bar stylesheet */
+.navbar-container {
+  background: rgba(255,255,255,0.5);
+  width: 96vw;
+  height: 10vh;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-item {
+  display: inline;
+}

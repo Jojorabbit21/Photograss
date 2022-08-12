@@ -1,14 +1,23 @@
 from django.contrib import admin
 from .models import *
 
-# Photo 클래스를 Inline으로 나타낸다.
-class PhotoInline(admin.TabularInline):
-  model = Photo
+# Personal Projects
+class PersonalProjectInline(admin.TabularInline):
+  model = PersonalPhotos
   
-# Post 클래스는 해당하는 Photo 객체를 리스트로 관리하는 역할을 한다.
-class PostAdmin(admin.ModelAdmin):
-  inlines = [PhotoInline, ]
+class PersonalProjectAdmin(admin.ModelAdmin):
+  inlines = [PersonalProjectInline, ]
+  
+# Commercial
+class CommercialInline(admin.TabularInline):
+  model = CommercialPhotos
 
+class CommercialAdmin(admin.ModelAdmin):
+  inlines = [CommercialInline, ]
 
 # Register your models here.
-admin.site.register(Post, PostAdmin)
+admin.site.register(MainVideo)
+admin.site.register(MainCarousel)
+admin.site.register(Snapshot)
+admin.site.register(PersonalProject, PersonalProjectAdmin)
+admin.site.register(CommercialProject, CommercialAdmin)
