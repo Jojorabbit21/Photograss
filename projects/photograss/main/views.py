@@ -35,8 +35,36 @@ def project_main(request):
   return render(request, 'main/project.html', context)
 
 def project_detail(request, project_name):
-  project = get_object_or_404(PersonalProject)
+  projects = PersonalProject.objects.all().values()
+  project = get_object_or_404(PersonalProject, title=project_name)
+  
+  images = PersonalProject.objects.filter(title=project_name).prefetch_related('personal_project')[0]
+  img = images.personal_project.all()
+  
   context = {
+    'projects': projects,
     'project': project,
+    'images': img,
   }
   return render(request, 'main/project_detail.html', context)
+
+def commercial_main(request):
+  projects = CommercialProject.objects.all().values()
+  context = {
+    "projects": projects,
+  }
+  return render(request, 'main/commercial.html', context)
+
+def commercial_detail(request, project_name):
+  projects = CommercialProject.objects.all().values()
+  project = get_object_or_404(CommercialProject, title=project_name)
+  
+  images = CommercialProject.objects.filter(title=project_name).prefetch_related('commercial_project')[0]
+  img = images.commercial_project.all()
+  
+  context = {
+    'projects': projects,
+    'project': project,
+    'images': img,
+  }
+  return render(request, 'main/commercial_detail.html', context)

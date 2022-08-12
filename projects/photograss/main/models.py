@@ -3,6 +3,7 @@ import shutil
 from re import S
 import string
 import random
+from functools import wraps
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -33,7 +34,7 @@ class CommercialProject(models.Model):
     return self._meta.get_field("title").value_from_object(self) + "_" + self._meta.get_field("client").value_from_object(self)
   
 class CommercialPhotos(models.Model):
-  post = models.ForeignKey(CommercialProject, on_delete=models.CASCADE, null=True)
+  post = models.ForeignKey(CommercialProject, on_delete=models.CASCADE, null=True, related_name='commercial_project')
   image = models.ImageField(upload_to="imgs/commercial", blank=True, null=True)
   
   class Meta:
@@ -41,7 +42,7 @@ class CommercialPhotos(models.Model):
     verbose_name_plural = "Commercial Project Photo"
   
   def directory(self):
-    return self.post.title + "_" + self.post.client
+    return self.post.title
   
 # Snap Photos
 class Snapshot(models.Model):
@@ -75,7 +76,7 @@ class PersonalProject(models.Model):
     return self._meta.get_field("title").value_from_object(self)
   
 class PersonalPhotos(models.Model):
-  post = models.ForeignKey(PersonalProject, on_delete=models.CASCADE, null=True)
+  post = models.ForeignKey(PersonalProject, on_delete=models.CASCADE, null=True, related_name="personal_project")
   image = models.ImageField(upload_to="imgs/project", blank=True, null=True)
 
   class Meta:
@@ -136,6 +137,12 @@ def deleteAttFile(sender, **kwargs):
   attFile = kwargs.get("instance")
   attFile.image.delete(save=False)
   
+@receiver(post_delete, sender=CommercialProject)
+def deleteCommercialDir(sender, instance, **kwargs):
+  title = instance.title
+  if os.path.exists('./media/imgs/commercial/{}'.format(title)):
+    shutil.rmtree('./media/imgs/commercial/{}'.format(title))
+  
 @receiver(post_delete, sender=CommercialPhotos)
 def deleteAttFile(sender, **kwargs):
   attFile = kwargs.get("instance")
@@ -146,21 +153,56 @@ def createProjectDir(sender, instance, **kwargs):
   pr_dir = "./media/imgs/project/{}".format(instance.get_directory())
   if not os.path.exists(pr_dir):
     os.makedirs(pr_dir)
-    
+
 @receiver(post_save, sender=PersonalPhotos)
 def movePhotos(sender, instance, **kwargs):
+  
+  if not instance:
+    return
+  if hasattr(instance, "_dirty"):
+    return
+  
   dirname = instance.directory()
   move_to = str(instance.image).replace('imgs/project/', '')
-  shutil.move('./media/'+str(instance.image), f'./media/imgs/project/{dirname}/{move_to}')
+  instance.image = f'imgs/project/{dirname}/{move_to}'
   
+  legacy_url = str(instance.image).replace(f'imgs/project/{dirname}','')
+  shutil.move('./media/imgs/project'+legacy_url, f'./media/imgs/project/{dirname}/{legacy_url}')
+  
+  try:
+    instance._dirty = True
+    instance.save()
+  finally:
+    del instance._dirty
+    
+   
 @receiver(pre_save, sender=CommercialProject)
 def createCommercialDir(sender, instance, **kwargs):
-  pr_dir = "./media/imgs/commercial/{}".format(instance.get_directory())
+  pr_dir = "./media/imgs/commercial/{}".format(instance.title)
   if not os.path.exists(pr_dir):
     os.makedirs(pr_dir)
     
 @receiver(post_save, sender=CommercialPhotos)
 def moveCommercialPhotos(sender, instance, **kwargs):
+  
+  if not instance:
+    return
+  if hasattr(instance, '_dirty'):
+    return
+  
   dirname = instance.directory()
   move_to = str(instance.image).replace('imgs/commercial/', '')
-  shutil.move('./media/'+str(instance.image), f'./media/imgs/commercial/{dirname}/{move_to}')
+  instance.image = f'imgs/commercial/{dirname}/{move_to}'
+  
+  legacy_url = str(instance.image).replace(f'imgs/commercial/{dirname}', '')
+  shutil.move('./media/imgs/commercial'+legacy_url, f'./media/imgs/commercial/{dirname}/{legacy_url}')
+  
+  try:
+    instance._dirty = True
+    instance.save()
+  finally:
+    del instance._dirty
+  
+  
+  
+
