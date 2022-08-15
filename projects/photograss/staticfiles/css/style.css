@@ -49,22 +49,6 @@ body {
 .project-list {
   width: 25%;
   float: left;
-  padding: 4%;
-  box-sizing: border-box;
-}
-
-.project-card {
-  padding: 0 1%;
-  margin: 2% 0;
-}
-
-.project-item {
-  font-size: 1.6rem;
-  text-decoration: none;
-}
-
-.project-item {
-  
 }
 
 .project-container {

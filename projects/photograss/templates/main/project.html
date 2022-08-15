@@ -14,14 +14,17 @@
     <!-- Navigation Bar -->
     <!--{% include 'main/navbar.html' %}-->
 
-    <div class="project-list">
-      {% for project in projects %}
-        <a href="{% url 'main:project_detail' project.title %}" pk={{ project.id }}>{{ project.title }}</a>
-      {% endfor %}
+    <div class="container">
+      <div class="project-list">
+        {% for project in projects %}
+          <div class="project-card">
+            <a class="project-item" href="{% url 'main:project_detail' project.title %}" pk={{ project.id }}>{{ project.title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+      {% block content %}
+      {% endblock %}
     </div>
-
-    {% block content %}
-    {% endblock %}
     
   </body>
 </html>
