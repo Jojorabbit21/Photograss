@@ -1,8 +1,88 @@
+/* Font-faces */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/redaction');
+
+@font-face {
+  font-family: "Adeston";
+  src: url("fonts/adeston-bw9b8.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Red Hat Display', sans-serif;
+*/
+
+
 body {
   margin: 0;
   font-size: 14px;
   min-width: 100vw;
   min-height: 100vh;
+}
+
+.title-box {
+  overflow: hidden;
+  position: relative;
+  max-width: fit-content;
+}
+
+.title-box a {
+  display: inline-block;
+  font-family: 'Redaction';
+  font-weight: 700;
+  font-size: 2rem;
+  text-decoration: none;
+  color: inherit;
+
+  /* Marquee */
+  /* -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); */
+  /* Apply Animation */
+  /* -moz-animation: marquee 7s linear infinite;
+  -webkit-animation: marquee 7s linear infinite;
+  animation: marquee 7s linear infinite; */
+}
+
+.title-box a:hover {
+  /* Animation stop when hover */
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@-moz-keyframes marquee {
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
 }
 
 .swiper {
@@ -22,7 +102,7 @@ body {
 
 /* Navigation Bar stylesheet */
 .navbar-container {
-  background: rgba(255,255,255,0.5);
+  background: transparent;
   width: 96vw;
   height: 10vh;
   position: fixed;
@@ -34,23 +114,44 @@ body {
   padding: 0 2vw;
 }
 
+.nav-link {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.nav-link:visited {
+  text-decoration: none !important;
+  color: inherit;
+}
+
 .menu-list {
   list-style: none;
 }
 
 .menu-item {
   display: inline;
+  margin: 0 0.6rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .container {
   width: 100%;
+  padding-top: 10vh;
 }
 
 .project-list {
   width: 25%;
   float: left;
-  padding: 4%;
+  padding: 0 4%;
   box-sizing: border-box;
+}
+
+.project-list-title {
+  font-family: 'Redaction 20';
+  font-size: 1rem;
+  margin-bottom: 0.6rem;  
 }
 
 .project-card {
@@ -60,11 +161,14 @@ body {
 
 .project-item {
   font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   text-decoration: none;
+  color: black;
 }
 
-.project-item {
-  
+.project-item:visited {
+  color: inherit;
 }
 
 .project-container {

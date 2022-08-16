@@ -6,7 +6,12 @@ from django.templatetags.static import static
 from .models import *
 
 def index(request):
-  return render(request, 'main/splash.html')
+  path = settings.MEDIA_ROOT
+  video = os.listdir(path + '/videos/')[0]
+  context = {
+    "video": video,
+  }
+  return render(request, 'main/splash.html', context)
 
 def home(request):
   path = settings.MEDIA_ROOT

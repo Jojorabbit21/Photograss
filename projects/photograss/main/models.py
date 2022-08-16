@@ -119,7 +119,7 @@ def deleteAttFile(sender, **kwargs):
 @receiver(post_delete, sender=MainVideo)
 def deleteAttFile(sender, **kwargs):
   attFile = kwargs.get("instance")
-  attFile.image.delete(save=False)
+  attFile.video.delete(save=False)
   
 @receiver(post_delete, sender=Snapshot)
 def deleteAttFile(sender, **kwargs):

@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/redaction');
+@font-face {
+  font-family: "Adeston";
+  src: url("fonts/adeston-bw9b8.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   overflow: hidden;
+}
+
+body {
+  margin: 0;
 }
 
 :root {
@@ -9,17 +23,82 @@ html {
 .main {
   width: 100%;
   height: 100%;
+  user-select: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  z-index: 2;
+}
+
+.splash-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.splash-title-package {
+  display: inline-block;
+  text-decoration: none !important;
+  color: black;
+}
+
+.splash-cta {
+  padding: 1%;
+  box-sizing: border-box;
+  position: absolute;
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  border-radius: 50%;
+  background: white;
+  /* border-color: white;
+  border-style: solid;
+  border-width: 2px; */
+  transform: rotate(30deg);
+  left: 70%;
+  top: 40%;
+}
+
+.splash-cta a {
+  display: inline-block;
+  text-decoration: none !important;
+  color: mediumspringgreen;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.splash-cta a:visited {
+  text-decoration: none !important;
+  color: mediumspringgreen;
+}
+
+.splash-title-package:visited {
+  text-decoration: none !important;
+  color: black;
+}
+
+.t1 {
+  font-family: 'Redaction 20', sans-serif;
+  font-weight: normal;
+  font-size: 20rem;
+  letter-spacing: -1rem;
+  line-height: 60%;
+  color: sandybrown;
+  /* or darksalmon */
+  opacity: 0.9  ;
 }
 
 .splash-video {
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
   font-size: 1.6rem;
-}
+} 

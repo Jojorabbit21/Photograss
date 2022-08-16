@@ -1,21 +1,23 @@
 <div class="navbar-container">
-  <h2>Photograss</h2>
+  <div class="title-box">
+    <a id="title" href={% url 'main:home' %} title="Photograss">Photograss</a>  
+  </div>
   <div class="menu-group">
     <ul class="menu-list">
       <li class="menu-item">
-        <a class="nav-link" href="">Snap</a>
+        <a class="nav-link" href="{% url 'main:snap' %}">Snap</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="">Projects</a>
+        <a class="nav-link" href="{% url 'main:project' %}">Projects</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="">Commercial</a>
+        <a class="nav-link" href="{% url 'main:commercial' %}">Commercial</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="">Photobook</a>
+        <a class="nav-link" href="#">Photobook</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="">About</a>
+        <a class="nav-link" href="#">About</a>
       </li>
     </ul>
   </div>

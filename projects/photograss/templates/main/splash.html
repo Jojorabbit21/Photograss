@@ -10,11 +10,22 @@
   </head>
   <body>
     <div class="main">
-      <a href="{% url 'main:home' %}">Photograss</a>
-      <video class="splash-video" muted autoplay loop>
-        <source src="{% static "main/splash3.mp4" %}" type="video/mp4">
-        <strong>Your browser does not support the video tag.</strong>
-      </video>
+      <div class="splash-title-container">
+        <a class="splash-title-package" href="{% url 'main:home' %}">
+          <h1 class="t1">Photograss</h1>
+        </a>
+        <div class="splash-cta"><a href="{% url 'main:home' %}">CLICK TO ENTER</a></div>
+      </div>
     </div>  
+    <video muted autoplay loop>
+      <source class="splash-video" src="media/videos/{{ video }}" type="video/mp4">
+      <strong>Your browser does not support the video tag.</strong>
+    </video>
+    <script>
+      window.onload = function() {
+        let video = document.querySelector(".splash-video");
+        video.src = "media/videos/{{video}}";
+      }
+    </script>
   </body>
 </html>
