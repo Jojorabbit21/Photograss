@@ -19,7 +19,7 @@
         <span class="project-list-title">Projects</span>
         {% for project in projects %}
           <div class="project-card">
-            <a class="project-item" href="{% url 'main:project_detail' project.title %}" pk={{ project.id }}>+ {{ project.title }}</a>
+            <a class="project-item {% if project.title == request.project_path %}active{% endif %}" href="{% url 'main:project_detail' project.title %}" pk={{ project.id }}>+ {{ project.title }}</a>
           </div>
         {% endfor %}
       </div>

@@ -2,9 +2,8 @@
 
 {% block content %}
 <div class="project-container">
-  <h1>{{project.title}}</h1>
-  <h2>{{project.id}}</h2>
-  <p>{{project.desc}}</p>
+  <div class="project-title">{{project.title}}</div>
+  <div class="project-desc">{{project.desc}}</div>
   <div class="project-photo-container">
     {% for image in images %}
     <div class="project-photo-box">

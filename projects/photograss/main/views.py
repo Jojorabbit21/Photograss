@@ -55,7 +55,7 @@ def project_detail(request, project_name):
 
   images = PersonalProject.objects.filter(title=project_name).prefetch_related('personal_project')[0]
   img = images.personal_project.all()
-  
+  request.project_path = str(request.path).replace("/projects/","")
   context = {
     'projects': projects,
     'project': project,
