@@ -5,19 +5,19 @@
   <div class="menu-group">
     <ul class="menu-list">
       <li class="menu-item">
-        <a class="nav-link" href="{% url 'main:snap' %}">Snap</a>
+        <a id="snap" class="nav-link {% if "/snap" in request.path %}active{% endif %}" href="{% url 'main:snap' %}">Snap</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="{% url 'main:project' %}">Projects</a>
+        <a id="projects" class="nav-link {% if "/projects" in request.path %}active{% endif %}" href="{% url 'main:project' %}">Projects</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="{% url 'main:commercial' %}">Commercial</a>
+        <a id="commercial" class="nav-link {% if "/commercial" in request.path %}active{% endif %}" href="{% url 'main:commercial' %}">Commercial</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="#">Photobook</a>
+        <a id="photobook" class="nav-link {% if "/photobook" in request.path %}active{% endif %}" href="#">Photobook</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link" href="#">About</a>
+        <a id="about" class="nav-link {% if "/about" in request.path %}active{% endif %}" href="#">About</a>
       </li>
     </ul>
   </div>

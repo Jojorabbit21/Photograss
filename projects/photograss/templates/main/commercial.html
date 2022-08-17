@@ -9,10 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Photograss - Projects</title>
   </head>
-  <body>
+  <body contextmenu="return false">
 
     <!-- Navigation Bar -->
-    <!--{% include 'main/navbar.html' %}-->
+    {% include 'main/navbar.html' %}
 
     <div class="project-list">
       {% for project in projects %}
@@ -22,6 +22,6 @@
 
     {% block content %}
     {% endblock %}
-    
+    <script src="{% static "js/script.js" %}"></script>
   </body>
 </html>

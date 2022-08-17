@@ -1,0 +1,65 @@
+let snapExpanded = false;
+let phrase = document.querySelector(".phrase-box");
+let snapContainer = document.querySelector(".masonry-container");
+let snaps = document.querySelectorAll(".masonry-content");
+
+/* Phrase toggle event listener */
+snapContainer.addEventListener("mouseenter", function() {
+  phrase.className += " blur";
+});
+snapContainer.addEventListener("mouseleave", function() {
+  if(!snapExpanded) { // if expanded image exists, not working
+    phrase.className = "phrase-box";
+  }
+});
+
+/* Masonry Detail page creation */ 
+[].forEach.call(snaps, function(snap) {
+  snap.addEventListener("click", function(e) {
+    const src = e.target.getAttribute('src');
+    const expand = document.createElement('div');
+    const expandImgs = document.createElement('img');
+    let phraseBox = document.querySelector('.phrase-box');
+    expand.className = 'expand-bg';
+    expandImgs.className = 'expand-img';
+    expandImgs.src = src;
+
+    // create expanded imgs
+    expand.appendChild(expandImgs);
+    document.body.prepend(expand);
+
+    phraseBox.className += " blur";
+    expand.className += " visible";
+    snapExpanded = true;
+
+    // Remove created expanded imgs
+    expand.addEventListener("click", function(e) {
+      if(snapExpanded) {
+        phraseBox.className = "phrase-box";
+        e.target.remove();
+        snapExpanded = false;
+      }
+    });
+  });
+});
+
+
+//////////////// AJAX to Django API using Fetch API
+// function SnapshotDetail(e) {
+//   const href = e.getAttribute('href');
+//   fetch("{% url 'main:snap' %}", {
+//     method: 'POST',
+//     credentials: 'same-origin',
+//     headers: {
+//       'Accept': 'application/json',
+//       'X-Requested-With': 'XMLHttpRequest',
+//     },
+//     body: JSON.stringify({}) // Javascript Object of data to POST
+//   })
+//   .then(response => {
+//     return response.json() // Convert response to JSON.
+//   })
+//   .then(data => {
+//     // Do something with returned data.
+//   })
+// }

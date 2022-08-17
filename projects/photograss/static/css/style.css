@@ -15,12 +15,17 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Red Hat Display', sans-serif;
 */
 
+:root {
+  font-size: 14px;
+  --top-nav-height: 8rem;
+}
 
 body {
   margin: 0;
-  font-size: 14px;
   min-width: 100vw;
   min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
 }
 
 .title-box {
@@ -104,8 +109,7 @@ body {
 .navbar-container {
   background: transparent;
   width: 96vw;
-  height: 10vh;
-  position: fixed;
+  height: var(--top-nav-height);
   z-index: 2;
   display: flex;
   flex-direction: row;
@@ -119,9 +123,14 @@ body {
   color: inherit;
 }
 
+.nav-link.active {
+  font-weight: 500;
+  color: white;
+  background: seagreen;
+}
+
 .nav-link:visited {
   text-decoration: none !important;
-  color: inherit;
 }
 
 .menu-list {
@@ -136,9 +145,8 @@ body {
   font-size: 1rem;
 }
 
-.container {
+.projects-container {
   width: 100%;
-  padding-top: 10vh;
 }
 
 .project-list {
@@ -172,7 +180,7 @@ body {
 }
 
 .project-container {
-  width: 75%;
+  width: 70%;
   float: left;
 }
 
@@ -183,4 +191,69 @@ body {
 .project-photo {
   width: 100%;
   height: auto;
+}
+
+.masonry-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 400px;
+  column-count: 4;
+  column-gap: 10px;
+  z-index: 3;
+}
+
+.masonry-content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  cursor: pointer;
+}
+
+.masonry-content > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+.masonry-image {
+  width: 100%;
+}
+
+.phrase-box {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none ;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+  
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.phrase {
+  font-family: 'Adeston';
+  font-size: 6rem;
+  color: orangered;
+  letter-spacing: -3px;
+  line-height: 130%;
+  text-align: center;
+  word-wrap: normal;
+}
+
+.blur {
+  opacity: 0;
+  /* backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); */
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
 }

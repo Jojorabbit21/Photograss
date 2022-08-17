@@ -72,6 +72,9 @@ class PersonalProject(models.Model):
   def __str__(self):
     return self.title
   
+  def url(self):
+    return str(self.title).replace(" ","_")
+  
   def get_directory(self):
     return self._meta.get_field("title").value_from_object(self)
   

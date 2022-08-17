@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style_snap.css' %}">
     <title>Photograss - Home</title>
   </head>
-  <body>
+  <body contextmenu="return false">
 
     <!-- Navigation Bar -->
     {% include 'main/navbar.html' %}
@@ -26,6 +26,6 @@
         </div>
       {% endfor %}
     </div>
-
+    <script src="{% static "js/script.js" %}"></script>
   </body>
 </html>
