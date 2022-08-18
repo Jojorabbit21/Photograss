@@ -13,10 +13,19 @@ snapContainer.addEventListener("mouseleave", function() {
   }
 });
 
+/* Menu Hovering event listener */
+let dirs = document.querySelectorAll('.nav-links');
+[].forEach.call(dirs, function(dir) {
+  dir.addEventListener("mouseover", function(e) {
+    
+  });
+});
+
 /* Masonry Detail page creation */ 
 [].forEach.call(snaps, function(snap) {
   snap.addEventListener("click", function(e) {
     const src = e.target.getAttribute('src');
+    const navbar = document.querySelector('.navbar-container');
     const expand = document.createElement('div');
     const expandImgs = document.createElement('img');
     let phraseBox = document.querySelector('.phrase-box');
@@ -28,6 +37,9 @@ snapContainer.addEventListener("mouseleave", function() {
     expand.appendChild(expandImgs);
     document.body.prepend(expand);
 
+    // Hide navigation
+    navbar.style.visibility = 'hidden';
+
     phraseBox.className += " blur";
     expand.className += " visible";
     snapExpanded = true;
@@ -36,6 +48,9 @@ snapContainer.addEventListener("mouseleave", function() {
     expand.addEventListener("click", function(e) {
       if(snapExpanded) {
         phraseBox.className = "phrase-box";
+        // show navigation
+        navbar.style.visibility = 'visible';
+        // remove snap expanded
         e.target.remove();
         snapExpanded = false;
       }
@@ -63,3 +78,10 @@ snapContainer.addEventListener("mouseleave", function() {
 //     // Do something with returned data.
 //   })
 // }
+
+/* Smooth page transition */
+// barba.js 사용하는 듯?
+document.addEventListener('DOMContentLoaded', ()=> {
+  // Do something here
+});
+

@@ -1,11 +1,163 @@
 /* Font-faces */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/redaction');
 
 @font-face {
   font-family: "Adeston";
   src: url("fonts/adeston-bw9b8.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'PP Eiko';
+  src: url('fonts/PPEiko-Heavy.woff2') format('woff2'),
+      url('fonts/PPEiko-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Eiko';
+  src: url('fonts/PPEiko-LightItalic.woff2') format('woff2'),
+      url('fonts/PPEiko-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Eiko';
+  src: url('fonts/PPEiko-BlackItalic.woff2') format('woff2'),
+      url('fonts/PPEiko-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Eiko';
+  src: url('fonts/PPEiko-Medium.woff2') format('woff2'),
+      url('fonts/PPEiko-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Eiko';
+  src: url('fonts/PPEiko-Thin.woff2') format('woff2'),
+      url('fonts/PPEiko-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Machina Inktrap';
+  src: url('fonts/PPNeueMachina-InktrapLight.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-InktrapLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Inktrap';
+  src: url('fonts/PPNeueMachina-InktrapRegular.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-InktrapRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Inktrap Light It';
+  src: url('fonts/PPNeueMachina-InktrapLightItalic.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-InktrapLightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Inktrap UlBd It';
+  src: url('fonts/PPNeueMachina-InktrapUltraboldItalic.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-InktrapUltraboldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Inktrap';
+  src: url('fonts/PPNeueMachina-InktrapRegularItalic.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-InktrapRegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain Light It';
+  src: url('fonts/PPNeueMachina-PlainLightItalic.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-PlainLightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain';
+  src: url('fonts/PPNeueMachina-PlainRegular.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-PlainRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Inktrap Ulbold';
+  src: url('fonts/PPNeueMachina-InktrapUltrabold.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-InktrapUltrabold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain';
+  src: url('fonts/PPNeueMachina-PlainLight.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-PlainLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain';
+  src: url('fonts/PPNeueMachina-PlainRegularItalic.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-PlainRegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain';
+  src: url('fonts/PPNeueMachina-PlainUltrabold.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-PlainUltrabold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Machina Plain Ulbold It';
+  src: url('fonts/PPNeueMachina-PlainUltraboldItalic.woff2') format('woff2'),
+      url('fonts/PPNeueMachina-PlainUltraboldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* 
@@ -14,24 +166,39 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Red Hat Display', sans-serif;
 */
 
+:root {
+  font-size: 14px;
+  --top-nav-height: 8rem;
+}
 
 body {
   margin: 0;
-  font-size: 14px;
   min-width: 100vw;
   min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  background-color: black;
 }
 
 .title-box {
   overflow: hidden;
   position: relative;
   max-width: fit-content;
+  z-index: 11;
+  padding: 1rem;
 }
 
 .title-box a {
+  fill: black;
+  mix-blend-mode: difference;
   display: inline-block;
-  font-family: 'Adeston';
-  font-size: 2rem;
+  font-family: 'PP Neue Machina Plain';
+  font-weight: normal;
+  font-size: 3.2rem;
   text-decoration: none;
   color: inherit;
 
@@ -98,13 +265,20 @@ body {
   background: rgba(255,255,255,0.6);
 }
 
+.slide-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 /* Navigation Bar stylesheet */
 .navbar-container {
-  background: rgba(255,255,255,0.5);
-  width: 96vw;
-  height: 10vh;
+  top: 0;
   position: fixed;
-  z-index: 2;
+  width: 96vw;
+  height: var(--top-nav-height);
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -112,23 +286,81 @@ body {
   padding: 0 2vw;
 }
 
+.menu-item {
+  display: inline-block;
+  margin: 1rem 1rem;
+  height: 1.5rem;
+  overflow: hidden;
+
+}
+
+.nav-link:hover {
+  transform: translateY(-150%);
+}
+
+.nav-link {
+  font-family: 'PP Neue Machina Inktrap', sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-decoration: none !important;
+  position: relative;
+  display: flex;
+
+  transform: translateY(0);
+  transition: all .5s cubic-bezier(.7, 0, .3, 1);
+  transition-delay: -0.05s;
+}
+
+.nav-link span {
+  display: block;
+}
+
+.nav-link.active {
+  font-weight: 500;
+  color: seagreen;
+}
+
+.nav-link:visited {
+  text-decoration: none !important;
+}
+
+.nav-link .link:nth-of-type(1) {
+  color: black;
+}
+
+.nav-link .link:nth-of-type(2) {
+  color: seagreen;
+  position: absolute;
+  transform: translateY(150%);
+}
+
+.menu-group {
+  z-index: 11;
+}
+
 .menu-list {
   list-style: none;
+  mix-blend-mode: difference;
 }
 
-.menu-item {
-  display: inline;
-}
-
-.container {
+.projects-container {
   width: 100%;
+  height: 100%;
+  margin-top: var(--top-nav-height);
 }
 
 .project-list {
+  height: 100vh;
   width: 25%;
   float: left;
-  padding: 4%;
+  padding: 0 4%;
   box-sizing: border-box;
+}
+
+.project-list-title {
+  font-family: 'Redaction 20';
+  font-size: 1rem;
+  margin-bottom: 0.6rem;  
 }
 
 .project-card {
@@ -138,16 +370,38 @@ body {
 
 .project-item {
   font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   text-decoration: none;
+  color: black;
 }
 
-.project-item {
-  
+.project-item.active {
+  font-weight: 600;
+  color: seagreen;
+  overflow: hidden;
 }
 
 .project-container {
-  width: 75%;
+  width: 70%;
   float: left;
+}
+
+.project-title {
+  font-family: 'PP Neue Machina Inktrap', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8rem;
+  letter-spacing: -0.1rem;
+}
+
+.project-desc {
+  margin: 1rem 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 160%;
+  color: slategray;
 }
 
 .project-photo-container {
@@ -157,4 +411,69 @@ body {
 .project-photo {
   width: 100%;
   height: auto;
+}
+
+.masonry-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 400px;
+  column-count: 4;
+  column-gap: 10px;
+  z-index: 3;
+}
+
+.masonry-content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  cursor: pointer;
+}
+
+.masonry-content > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+.masonry-image {
+  width: 100%;
+}
+
+.phrase-box {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none ;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+  
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.phrase {
+  font-family: 'Adeston';
+  font-size: 6rem;
+  color: orangered;
+  letter-spacing: -3px;
+  line-height: 130%;
+  text-align: center;
+  word-wrap: normal;
+}
+
+.blur {
+  opacity: 0;
+  /* backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); */
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
 }
