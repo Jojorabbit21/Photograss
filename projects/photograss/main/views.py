@@ -16,19 +16,16 @@ def index(request):
 
 def home(request):
   path = settings.MEDIA_ROOT
-  img_list = os.listdir(path + '/imgs/main_carousel/')
+  img_list = MainCarousel.objects.all().values()
   context = {
     "images": img_list,
-    "prefix": settings.MEDIA_URL,
     }
   
   return render(request, 'main/home.html', context)
 
 def snap(request):
-  
   if request.method == 'POST':
     data = json.loads(request.body)
-    
     context = {
       'result': data,
     }

@@ -184,92 +184,11 @@ main {
   background-color: black;
 }
 
-.title-box {
-  overflow: hidden;
-  position: relative;
-  max-width: fit-content;
-  z-index: 11;
-  padding: 1rem;
-}
-
-.title-box a {
-  fill: black;
-  mix-blend-mode: difference;
-  display: inline-block;
-  font-family: 'PP Neue Machina Plain';
-  font-weight: normal;
-  font-size: 3.2rem;
-  text-decoration: none;
-  color: inherit;
-
-  /* Marquee */
-  /* -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%); */
-  /* Apply Animation */
-  /* -moz-animation: marquee 7s linear infinite;
-  -webkit-animation: marquee 7s linear infinite;
-  animation: marquee 7s linear infinite; */
-}
-
-.title-box a:hover {
-  /* Animation stop when hover */
-  -moz-animation-play-state: paused;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-@-moz-keyframes marquee {
-  from {
-    -moz-transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes marquee {
-  from {
-    -webkit-transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee {
-  from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
-
-.swiper {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.swiper-pagination-bullet { 
-  background-color: transparent;
-  border: 1px solid white;
-}
-
-.swiper-pagination-bullet-active {
-  background: rgba(255,255,255,0.6);
-}
-
-.slide-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+.menu-icon {
+  background-color: seagreen;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
 }
 
 /* Navigation Bar stylesheet */
@@ -284,6 +203,48 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 0 2vw;
+}
+
+.title-box {
+  overflow: hidden;
+  position: relative;
+  max-width: fit-content;
+  z-index: 11;
+  padding: 1rem;
+}
+
+.title-box a span {
+  color: black;
+  display: inline-block;
+  font-family: 'PP Neue Machina Plain';
+  font-weight: normal;
+  font-size: 3.2rem;
+  text-decoration: none;
+  /* Marquee */
+  /* -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); */
+  /* Apply Animation */
+  /* -moz-animation: marquee 7s linear infinite;
+  -webkit-animation: marquee 7s linear infinite;
+  animation: marquee 7s linear infinite; */
+}
+
+.title-box a:hover {
+  /* Animation stop when hover */
+  /* -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; */
+}
+
+.title {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.title:visited {
+  color: inherit;
+  text-decoration: none !important;
 }
 
 .menu-item {
@@ -341,6 +302,59 @@ main {
 .menu-list {
   list-style: none;
   mix-blend-mode: difference;
+}
+
+@-moz-keyframes marquee {
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.swiper {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-pagination-bullet { 
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgba(255,255,255,0.6);
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .projects-container {
