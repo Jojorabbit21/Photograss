@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Photograss</title>
+  </head>
+  <body contextmenu="return false">
+    <!-- Navigation Bar -->
+    {% include 'main/navbar.html' %}
+
+    <!-- Extended templates -->
+    {% block content %}
+    {% endblock %}
+
+    {% block script %}
+    {% endblock%}
+
+    <script src="{% static "js/script.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </body>
+</html>

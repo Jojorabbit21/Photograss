@@ -1,98 +1,33 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style_carousel.css' %}">
-    <title>Photograss - Home</title>
-  </head>
-  <body contextmenu="return false">
-    <!-- Navigation Bar -->
-    {% include 'main/navbar.html' %}
-    <!--
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        {% if images %}
-          {% for image in images %}
-            <div class="swiper-slide">
-              <img class="slide-img" src="/media/{{ image.image }}" style="background-color={{ image.background_color }};">
-            </div>
-          {% endfor %}
-        {% endif %}
-      </div>
+{% extends 'main/base.html' %}
+{% block content %}
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% if images %}
+        {% for image in images %}
+          <div class="swiper-slide">
+            <img class="slide-img" src="/media/{{ image.image }}" style="background-color={{ image.background_color }};">
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
-    -->
-
-    <!-- Extended templates -->
-    {% block content %}
-    {% endblock %}
-
-    <div class="swiper-pagination"></div>
-    <script>
-      /* Menu icon transition study */
-      let icn = document.querySelector('.menu-icon');
-      icn.addEventListener('click', (e) => {
-        icn.animate(
-          {
-            transform: [
-              'scale(1)',
-              'scale(2.4)'
-            ]
-          },
-          {
-            duration: 500,
-            fill: 'forwards',
-            easing: 'ease'
-          }
-        );
-        setTimeout(
-          function() 
-          {
-            icn.style.transformOrigin = 'center right';
-            console.log("origin set");
-          },
-          1000);
-        setTimeout(
-          function() {
-            icn.animate(
-              {
-                transform: [
-                  'scaleX(1)',
-                  'scaleX(20)'
-                ]
-              },
-              {
-                duration: 500,
-                fill: 'forwards',
-                easing: 'ease',
-              }
-            );
-            console.log('stretch');
-          },
-          2000);
-      });
-    </script>
-    <script src="{% static "js/script.js" %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-      // Initiate Swiper slider
-      const swiper = new Swiper('.swiper', {
-        autoplay: {
-          delay: 5000,
-        },
-        autoHeight: false,
-        speed: 700, // ms
-        spaceBetween: 0,
-        direction: "horizontal",
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
-    </script>
-  </body>
-</html>
+  </div>
+  <div class="swiper-pagination"></div>
+{% endblock %}
+{% block script %}
+  <script>
+    // Initiate Swiper slider
+    const swiper = new Swiper('.swiper', {
+      autoplay: {
+        delay: 5000,
+      },
+      autoHeight: false,
+      speed: 700, // ms
+      spaceBetween: 0,
+      direction: "horizontal",
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+{% endblock %}

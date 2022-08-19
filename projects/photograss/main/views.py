@@ -15,12 +15,10 @@ def index(request):
   return render(request, 'main/splash.html', context)
 
 def home(request):
-  path = settings.MEDIA_ROOT
   img_list = MainCarousel.objects.all().values()
   context = {
     "images": img_list,
     }
-  
   return render(request, 'main/home.html', context)
 
 def snap(request):
