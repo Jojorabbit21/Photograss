@@ -6,10 +6,13 @@ from django.http import HttpResponse, JsonResponse
 from django.templatetags.static import static
 from .models import *
 
+domain = settings.DOMAIN
+
 def index(request):
   path = settings.MEDIA_ROOT
   video = os.listdir(path + '/videos/')[0]
   context = {
+    "domain": domain,
     "video": video,
   }
   return render(request, 'main/splash.html', context)
@@ -17,6 +20,7 @@ def index(request):
 def home(request):
   img_list = MainCarousel.objects.all().values()
   context = {
+    "domain": domain,
     "images": img_list,
     }
   return render(request, 'main/home.html', context)
@@ -25,6 +29,7 @@ def snap(request):
   if request.method == 'POST':
     data = json.loads(request.body)
     context = {
+      'domain': domain,
       'result': data,
     }
     return JsonResponse(context)
@@ -32,6 +37,7 @@ def snap(request):
     path = settings.MEDIA_ROOT
     img_list = os.listdir(path + '/imgs/snap/')
     context = {
+      "domain": domain,
       "images": img_list,
       "prefix": settings.MEDIA_URL,
       }
@@ -40,6 +46,7 @@ def snap(request):
 def project_main(request):
   projects = PersonalProject.objects.all().values()
   context = {
+    "domain": domain,
     "projects": projects,
   }
   return render(request, 'main/project.html', context)
@@ -52,6 +59,7 @@ def project_detail(request, project_name):
   img = images.personal_project.all()
   request.project_path = str(request.path).replace("/projects/","")
   context = {
+    'domain': domain,
     'projects': projects,
     'project': project,
     'images': img,
@@ -61,6 +69,7 @@ def project_detail(request, project_name):
 def commercial_main(request):
   projects = CommercialProject.objects.all().values()
   context = {
+    "domain": domain,
     "projects": projects,
   }
   return render(request, 'main/commercial.html', context)
@@ -73,6 +82,7 @@ def commercial_detail(request, project_name):
   img = images.commercial_project.all()
   
   context = {
+    'domain': domain,
     'projects': projects,
     'project': project,
     'images': img,

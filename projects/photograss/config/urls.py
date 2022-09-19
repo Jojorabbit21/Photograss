@@ -22,7 +22,6 @@ admin.site.site_title = "Photograss"
 admin.site.index_title = "Photograss Admin"
 
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
 ]

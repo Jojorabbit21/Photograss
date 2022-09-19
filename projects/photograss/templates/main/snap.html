@@ -1,31 +1,14 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style_snap.css' %}">
-    <title>Photograss - Home</title>
-  </head>
-  <body contextmenu="return false">
-
-    <!-- Navigation Bar -->
-    {% include 'main/navbar.html' %}
-
-    <div class='phrase-box'>
-      <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
-    </div>
-    
-    <div class="masonry-container">
-      {% for image in images %}
-        <div class="masonry-content">
-          <img class="masonry-image snap" src="{{ prefix }}imgs/snap/{{ image }}">
-        </div>
-      {% endfor %}
-    </div>
-    <script src="{% static "js/script.js" %}"></script>
-  </body>
-</html>
+{% extends 'common/base.html' %}
+{% block content %}
+  <div class='phrase-box'>
+    <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
+  </div>
+  
+  <div class="masonry-container">
+    {% for image in images %}
+      <div class="masonry-content">
+        <img class="masonry-image snap" src="{{ prefix }}imgs/snap/{{ image }}">
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

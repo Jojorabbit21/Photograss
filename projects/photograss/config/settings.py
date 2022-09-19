@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-a7&$t!yb9busb0yd284glg@p&!5c$vj8965l3a4_u4uvg#fdzk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+DOMAIN = 'PHOTOGRASS'
 
 # Application definition
 

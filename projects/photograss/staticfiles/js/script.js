@@ -14,12 +14,12 @@ snapContainer.addEventListener("mouseleave", function() {
 });
 
 /* Menu Hovering event listener */
-let dirs = document.querySelectorAll('.nav-links');
-[].forEach.call(dirs, function(dir) {
-  dir.addEventListener("mouseover", function(e) {
+// let dirs = document.querySelectorAll('.nav-links');
+// [].forEach.call(dirs, function(dir) {
+//   dir.addEventListener("mouseover", function(e) {
     
-  });
-});
+//   });
+// });
 
 /* Masonry Detail page creation */ 
 [].forEach.call(snaps, function(snap) {
@@ -44,6 +44,9 @@ let dirs = document.querySelectorAll('.nav-links');
     expand.className += " visible";
     snapExpanded = true;
 
+    // Deactivate scroll when expanded
+    document.body.style.overflowY = 'hidden';
+
     // Remove created expanded imgs
     expand.addEventListener("click", function(e) {
       if(snapExpanded) {
@@ -52,6 +55,8 @@ let dirs = document.querySelectorAll('.nav-links');
         navbar.style.visibility = 'visible';
         // remove snap expanded
         e.target.remove();
+        // activate scroll
+        document.body.style.overflowY = 'auto';
         snapExpanded = false;
       }
     });

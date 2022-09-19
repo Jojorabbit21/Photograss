@@ -9,7 +9,7 @@ app_name = 'main'
 urlpatterns = [
   path('', views.index),
   path("home", views.home, name='home'),
-  path("snap", views.snap, name="snap"),
+  path("snaps", views.snap, name="snap"),
   path("projects", views.project_main, name="project"),
   path("projects/<str:project_name>", views.project_detail, name="project_detail"),
   path("commercial", views.commercial_main, name="commercial"),

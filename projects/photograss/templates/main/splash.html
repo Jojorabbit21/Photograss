@@ -6,13 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style_splash.css' %}">
-    <title>Photograss - Index</title>
+    <title>{{ domain }}</title>
   </head>
   <body contextmenu="return false">
     <div class="main">
       <div class="splash-title-container">
         <a class="splash-title-package" href="{% url 'main:home' %}">
-          <h1 class="t1">Photograss</h1>
+          <h1 class="t1">{{ domain }}</h1>
         </a>
         <div class="splash-cta"><a href="{% url 'main:home' %}">CLICK TO ENTER</a></div>
       </div>

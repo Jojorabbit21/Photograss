@@ -1,9 +1,8 @@
 import os
 import shutil
 from re import S
-import string
-import random
 from functools import wraps
+from tkinter import E
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -21,6 +20,7 @@ def generate_id():
 class CommercialProject(models.Model):
   title = models.CharField(max_length=200)
   client = models.CharField(max_length=200)
+  thumbnail = models.ImageField(upload_to="imgs/commercial", blank=True, null=True)
   desc = models.TextField(max_length=400, blank=False)
   user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
   
@@ -29,10 +29,15 @@ class CommercialProject(models.Model):
     verbose_name_plural = "Commercial Project"
     
   def __str__(self):
-    return self.title + " / client : " + self.client  
+    return self.title 
   
+  @property
   def get_directory(self):
-    return self._meta.get_field("title").value_from_object(self) + "_" + self._meta.get_field("client").value_from_object(self)
+    return self._meta.get_field("title").value_from_object(self)
+  
+  @property
+  def filename(self):
+    return os.path.basename(self.thumbnail.name)
   
 class CommercialPhotos(models.Model):
   post = models.ForeignKey(CommercialProject, on_delete=models.CASCADE, null=True, related_name='commercial_project')
@@ -42,6 +47,7 @@ class CommercialPhotos(models.Model):
     verbose_name = "Commercial Project Photos"
     verbose_name_plural = "Commercial Project Photo"
   
+  @property
   def directory(self):
     return self.post.title
   
@@ -63,6 +69,7 @@ class Snapshot(models.Model):
 class PersonalProject(models.Model):
   title = models.CharField(max_length=200)
   serial = models.CharField(max_length=50, default=generate_id)
+  thumbnail = models.ImageField(upload_to="imgs/project", blank=True, null=True)
   desc = models.TextField(max_length=400, blank=False)
   user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
   
@@ -76,6 +83,11 @@ class PersonalProject(models.Model):
   def url(self):
     return str(self.title).replace(" ","_")
   
+  @property
+  def filename(self):
+    return os.path.basename(self.thumbnail.name)
+  
+  @property
   def get_directory(self):
     return self._meta.get_field("title").value_from_object(self)
   
@@ -86,7 +98,8 @@ class PersonalPhotos(models.Model):
   class Meta:
     verbose_name = "Personal Project Photos"
     verbose_name_plural = "Personal Project Photo"
-    
+  
+  @property
   def directory(self):
     return self.post.title
     
@@ -155,10 +168,28 @@ def deleteAttFile(sender, **kwargs):
 
 @receiver(pre_save, sender=PersonalProject)
 def createProjectDir(sender, instance, **kwargs):
-  pr_dir = "./media/imgs/project/{}".format(instance.get_directory())
+  pr_dir = "./media/imgs/project/{}".format(instance.get_directory)
   if not os.path.exists(pr_dir):
     os.makedirs(pr_dir)
-
+    
+@receiver(post_save, sender=PersonalProject)
+def movePersonalProjectPhoto(sender, instance, **kwagrs):
+  if not instance:
+    return
+  if hasattr(instance, "_dirty"):
+    return
+  
+  if os.path.isfile(f'./media/imgs/project/{instance.title}/{instance.filename}'):
+    return
+  else:
+    instance.thumbnail = f'imgs/project/{instance.title}/{instance.filename}'
+    shutil.move("./media/imgs/project/"+instance.filename, f'./media/imgs/project/{instance.get_directory}')
+    try:
+      instance._dirty = True
+      instance.save()
+    finally:
+      del instance._dirty
+  
 @receiver(post_save, sender=PersonalPhotos)
 def movePhotos(sender, instance, **kwargs):
   
@@ -167,7 +198,7 @@ def movePhotos(sender, instance, **kwargs):
   if hasattr(instance, "_dirty"):
     return
   
-  dirname = instance.directory()
+  dirname = instance.directory
   move_to = str(instance.image).replace('imgs/project/', '')
   instance.image = f'imgs/project/{dirname}/{move_to}'
   
@@ -187,6 +218,25 @@ def createCommercialDir(sender, instance, **kwargs):
   if not os.path.exists(pr_dir):
     os.makedirs(pr_dir)
     
+@receiver(post_save, sender=CommercialProject)
+def moveCommercialProjectPhoto(sender, instance, **kwargs):
+  if not instance:
+    return
+  if hasattr(instance, "_dirty"):
+    return
+  
+  if os.path.isfile(f'./media/imgs/commercial/{instance.title}/{instance.filename}'):
+    return
+  else:
+    instance.thumbnail = f'imgs/commercial/{instance.title}/{instance.filename}'
+    shutil.move("./media/imgs/commercial/"+instance.filename, f'./media/imgs/commercial/{instance.get_directory}')
+    
+    try:
+      instance._dirty = True
+      instance.save()
+    finally:
+      del instance._dirty
+
 @receiver(post_save, sender=CommercialPhotos)
 def moveCommercialPhotos(sender, instance, **kwargs):
   

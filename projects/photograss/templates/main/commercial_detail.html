@@ -1,10 +1,28 @@
-{% extends 'main/commercial.html' %}
+{% extends 'common/base.html' %}
 
 {% block content %}
-<h1>{{project.title}}</h1>
-<h2>{{project.id}}</h2>
-<p>{{project.desc}}</p>
-{% for image in images %}
-<img src="/media/{{image.image}}"/>
-{% endfor %}
+<div class="marquee-wrap">
+  <ul class="marquee">
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+  </ul>
+  <!-- Mirrors the content above -->
+  <ul class="marquee" aria-hidden="true">
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+  </ul>
+</div>
+<img class="project-thumbnail" src="/media/{{ project.thumbnail }}"/>
+<div class="project-detail-container">
+  <div class="project-desc">{{project.desc}}</div>
+  <div class="project-photo-container">
+    {% for image in images %}
+    <div class="project-photo-box">
+      <img class="project-photo" src="/media/{{image.image}}"/>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
