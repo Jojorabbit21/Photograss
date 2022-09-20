@@ -1,33 +1,17 @@
 {% extends 'common/base.html' %}
 {% block content %}
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      {% if images %}
+{% if images %}
+  <section class="swiper" onselectstart="return false" oncontextmenu="return false" >
+    <div class="swiper-wrapper" max-length="{{ images|length }}">
         {% for image in images %}
           <div class="swiper-slide">
-            <img class="slide-img" src="/media/{{ image.image }}" style="background-color={{ image.background_color }};">
+            <!-- <img class="slide-img" src="/media/{{ image.image }}" style="background-color={{ image.background_color }};">-->
           </div>
         {% endfor %}
-      {% endif %}
     </div>
-  </div>
+  </section>
   <div class="swiper-pagination"></div>
-{% endblock %}
-{% block script %}
-  <script>
-    // Initiate Swiper slider
-    const swiper = new Swiper('.swiper', {
-      autoplay: {
-        delay: 5000,
-      },
-      autoHeight: false,
-      speed: 700, // ms
-      spaceBetween: 0,
-      direction: "horizontal",
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-  </script>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+{% endif %}
 {% endblock %}

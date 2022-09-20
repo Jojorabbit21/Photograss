@@ -1,6 +1,7 @@
 /* Font-faces */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('http://fonts.cdnfonts.com/css/redaction');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 
 @font-face {
   font-family: "Adeston";
@@ -184,6 +185,23 @@ body {
   display: none;
 }
 
+/* CUSTOM CURSOR */
+.cursor {
+  position: fixed;
+  display: inline-block;
+  border-radius: 50%;
+  border: 3px solid rgb(0, 153, 31);
+  width: 10px;
+  height: 10px;
+  left: 20px;
+  right: 0;
+  transition: transform .2s ease, 
+              opacity .2s ease, 
+              border-color .2s ease,
+              background-color .2s ease;
+  pointer-events: none;
+}
+
 
 @media screen and (min-width: 1440px) {
   :root {
@@ -216,6 +234,8 @@ body {
     --marquee-text-margin: 3rem;
 
     --project-desc-fontsize: 0.9rem;
+
+    --swiper-pagination-fontsize: 4rem;
   }
 }
 /*
@@ -353,31 +373,50 @@ HEADER
 
 HOME SCREEN CAROUSEL 
 
-d*/
+*/
 .swiper {
   top: var(--header-height);
   margin: 0;
   width: 100vw;
   height: 100vh;
+
+  /* Disable interaction */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none ;
+  pointer-events: none;
+  /* Disable download Mobile */
+  -webkit-touch-callout: none;
 }
 
-.swiper-pagination {
-  bottom: 2rem !important;
-}
-.swiper-pagination-bullet { 
-  background-color: transparent;
-  border: 1px solid white;
-}
-.swiper-pagination-bullet-active {
-  background: rgba(255,255,255,0.6);
+.swiper-wrapper , .swiper-slide {
+  width: 100%;
+  height: 100%;
 }
 
 .slide-img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
 }
+
+.swiper-pagination {
+  width: auto;
+  height: 10%;
+}
+
+.swiper-pagination-bullet {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: var(--swiper-pagination-fontsize);
+  letter-spacing: -0.2rem;
+
+  width: fit-content;
+  height: fit-content;
+  background: transparent;
+}
+
 
 
 /*

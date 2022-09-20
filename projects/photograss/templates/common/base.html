@@ -7,28 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Font awesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-    <!-- Swiper -->
+    <!-- Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <!-- Local CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <title>{{ domain }}</title>
   </head>
 
-  <body contextmenu="return false">
+  <body data-barba="wrapper">
+
     <!-- Header -->
     {% include 'common/header.html' %}
-
-    <!-- Extended templates -->
-    {% block content %}
-    {% endblock %}
+    
+    <main data-barba="container" data-barba-namespace="home">
+      <!-- Extended templates -->
+      {% block content %}
+      {% endblock %}
+    </main>
 
     <!-- Footer -->
     {% include 'common/footer.html' %}
 
-    <script src="{% static "js/script.js" %}"></script>
+    <!-- Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <!-- Script block -->
+    <!-- Barba.js
+    <script src="https://unpkg.com/@barba/core"></script> -->
+    <!-- custom cursor library -->
+    <!-- Local Javascript -->
+    <script src="{% static "js/script.js" %}"></script>
+
     {% block script %}
     {% endblock%}
+
   </body>
 </html>
