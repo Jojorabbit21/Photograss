@@ -1,17 +1,23 @@
 {% extends 'common/base.html' %}
 {% block content %}
 {% if images %}
+  <div class="gsap-test">
+    <div class="quoteContainer">
+      <div class="split-text">Projects</div>
+    </div>
+  </div>
+  <!--
   <section class="swiper" onselectstart="return false" oncontextmenu="return false" >
     <div class="swiper-wrapper" max-length="{{ images|length }}">
         {% for image in images %}
           <div class="swiper-slide">
-            <!-- <img class="slide-img" src="/media/{{ image.image }}" style="background-color={{ image.background_color }};">-->
+            <img class="slide-img" src="/media/{{ image.image }}" style="background-color={{ image.background_color }};">
           </div>
         {% endfor %}
     </div>
   </section>
   <div class="swiper-pagination"></div>
   <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="swiper-button-next"></div> -->
 {% endif %}
 {% endblock %}

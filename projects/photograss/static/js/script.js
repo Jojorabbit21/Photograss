@@ -1,3 +1,90 @@
+
+
+/* Split Texts and recreate elements */
+let splitText = document.querySelector(".split-text");
+let parent = splitText.parentNode;
+let target = splitText.innerHTML;
+parent.replaceChildren();
+
+let div = document.createElement('div');
+div.className = 'quoteBox quote';
+for(let i in target) {
+  let span = document.createElement('span');
+  span.innerText = target[i];
+  div.insertAdjacentElement('beforeEnd', span)
+}
+parent.insertAdjacentElement("beforeEnd", div);
+
+let second = parent.firstChild.cloneNode(true);
+second.className = 'quoteBox quote quote-second';
+parent.insertAdjacentElement("beforeEnd", second);
+
+/* Split Text Animation */
+let quoteContainer = document.querySelector(".quoteContainer");
+quoteContainer.addEventListener("mouseenter", function() {
+  let quoteBox = quoteContainer.children;
+  quoteBox[0].animate([
+    { 
+      transform: "translate(0, 0)"
+    },
+    {
+      transform: "translate(0, -100%)"
+    }
+  ],
+  {
+    duration: 1000,
+    easing: "ease",
+    fill: "forwards"
+  });
+  quoteBox[1].animate([
+    {
+      transform: "translate(0, 0)"
+    },
+    {
+      transform: "translate(0, -100%)"
+    }
+  ],
+  {
+    duration: 1000,
+    easing: "ease",
+    fill: "forwards"
+  });
+});
+quoteContainer.addEventListener("mouseleave", function() {
+  let quoteBox = quoteContainer.children;
+  quoteBox[0].animate([
+    { 
+      transform: "translate(0, -100%)"
+    },
+    {
+      transform: "translate(0, 0)"
+    }
+  ],
+  {
+    duration: 1000,
+    easing: "ease",
+    fill: "forwards"
+  });
+  quoteBox[1].animate([
+    {
+      transform: "translate(0, -100%)"
+    },
+    {
+      transform: "translate(0, 0)"
+    }
+  ],
+  {
+    duration: 1000,
+    easing: "ease",
+    fill: "forwards"
+  });
+});
+
+
+
+
+
+
 try {
   if(window.location.pathname == '/snaps') {
     let snapExpanded = false;

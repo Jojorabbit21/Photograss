@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('http://fonts.cdnfonts.com/css/redaction');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,300;1,500;1,700&display=swap');
 
 @font-face {
   font-family: "Adeston";
@@ -167,6 +169,11 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Red Hat Display', sans-serif;
 */
 
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -178,7 +185,6 @@ body {
   min-height: 100vh;
   height: auto;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {
@@ -620,22 +626,24 @@ PROJECT DETAIL PAGE
   column-gap: 10px;
   z-index: 3;
 }
-
   .masonry-content {
     display: grid;
     grid-template-rows: 1fr auto;
     margin-bottom: 10px;
     break-inside: avoid;
     cursor: pointer;
+    
   }
-
+  .masonry-content:hover img{
+    opacity: .7;
+  }
   .masonry-content > img {
     grid-row: 1 / -1;
     grid-column: 1;
   }
-
   .masonry-image {
     width: 100%;
+    transition: all 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
 
 .phrase-box {
@@ -674,4 +682,57 @@ PROJECT DETAIL PAGE
   -webkit-backdrop-filter: blur(6px); */
   transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
+}
+
+
+
+
+/* 
+
+
+
+Testing
+
+
+
+*/
+
+.gsap-test {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteContainer { 
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 170px;
+}
+
+.quoteBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+.quote {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 10rem;
+  letter-spacing: -.2rem;
+  color: orangered;
+}
+
+.quote-second {
+  font-family: 'Bitter', serif;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0;
+  color: black;
 }
