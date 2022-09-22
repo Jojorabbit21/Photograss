@@ -312,9 +312,6 @@ HOME SCREEN CAROUSEL
 }
 
 .swiper-pagination-bullet {
-  font-size: var(--swiper-pagination-fontsize);
-  letter-spacing: -0.2rem;
-
   width: fit-content;
   height: fit-content;
   background: transparent;
