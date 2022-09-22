@@ -6,23 +6,29 @@
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
   </ul>
   <!-- Mirrors the content above -->
   <ul class="marquee" aria-hidden="true">
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
   </ul>
 </div>
 <img class="project-thumbnail" src="/media/{{ project.thumbnail }}"/>
-<div class="project-detail-container">
-  <div class="project-desc">{{project.desc}}</div>
-  <div class="project-photo-container">
-    {% for image in images %}
-    <div class="project-photo-box">
-      <img class="project-photo" src="/media/{{image.image}}"/>
+<section>
+  <div class="project-detail-container">
+    <div class="project-desc">{{project.desc}}</div>
+    <div class="project-photo-container">
+      {% for image in images %}
+      <div class="project-photo-box" data-scroll>
+        <img class="project-photo" src="/media/{{image.image}}"/>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
-</div>
+</section>
 {% endblock %}
