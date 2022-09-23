@@ -1,0 +1,823 @@
+@font-face {
+  font-family: "Adeston";
+  src: url("fonts/adeston-bw9b8.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal Book';
+  src: url("fonts/PPNeueMontreal-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Neue Montreal Medium';
+  src: url("fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Neue Montreal Bold';
+  src: url("fonts/PPNeueMontreal-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Neue Montreal Italic';
+  src: url("fonts/PPNeueMontreal-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PP Neue Montreal Semibold Italic';
+  src: url("fonts/PPNeueMontreal-SemiBolditalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PP Neue Montreal Thin';
+  src: url("fonts/PPNeueMontreal-Thin.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Migra Eb';
+  src: url("fonts/Migra-Extrabold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Migra El';
+  src: url("fonts/Migra-Extralight.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Migra Italic Eb';
+  src: url("fonts/MigraItalic-ExtraboldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Migra Italic El';
+  src: url("fonts/MigraItalic-ExtralightItalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Denton Eb I';
+  src: url('fonts/Denton-ExtraBoldItalic.woff2') format('woff2'),
+      url('fonts/Denton-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Eb';
+  src: url('fonts/Denton-ExtraBold.woff2') format('woff2'),
+      url('fonts/Denton-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Bl';
+  src: url('fonts/Denton-Black.woff2') format('woff2'),
+      url('fonts/Denton-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Bl I';
+  src: url('Denton-BlackItalic.woff2') format('woff2'),
+      url('Denton-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton B I';
+  src: url('Denton-BoldItalic.woff2') format('woff2'),
+      url('Denton-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton B';
+  src: url('Denton-Bold.woff2') format('woff2'),
+      url('Denton-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton M';
+  src: url('Denton-Medium.woff2') format('woff2'),
+      url('Denton-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton L';
+  src: url('Denton-Light.woff2') format('woff2'),
+      url('Denton-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton L I';
+  src: url('Denton-LightItalic.woff2') format('woff2'),
+      url('Denton-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton M I';
+  src: url('Denton-MediumItalic.woff2') format('woff2'),
+      url('Denton-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton R';
+  src: url('Denton-Regular.woff2') format('woff2'),
+      url('Denton-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton T I';
+  src: url('Denton-ThinItalic.woff2') format('woff2'),
+      url('Denton-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton T';
+  src: url('Denton-Thin.woff2') format('woff2'),
+      url('Denton-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton R I';
+  src: url('Denton-RegularItalic.woff2') format('woff2'),
+      url('Denton-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed Bl';
+  src: url('DentonCondensed-Black.woff2') format('woff2'),
+      url('DentonCondensed-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed Bl I';
+  src: url('DentonCondensed-BlackItalic.woff2') format('woff2'),
+      url('DentonCondensed-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed L I';
+  src: url('DentonCondensed-LightItalic.woff2') format('woff2'),
+      url('DentonCondensed-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed B I';
+  src: url('DentonCondensed-BoldItalic.woff2') format('woff2'),
+      url('DentonCondensed-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed L';
+  src: url('DentonCondensed-Light.woff2') format('woff2'),
+      url('DentonCondensed-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed M';
+  src: url('DentonCondensed-Medium.woff2') format('woff2'),
+      url('DentonCondensed-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed Eb';
+  src: url('DentonCondensed-ExtraBold.woff2') format('woff2'),
+      url('DentonCondensed-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed Eb I';
+  src: url('DentonCondensed-ExtraBoldItalic.woff2') format('woff2'),
+      url('DentonCondensed-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed R I';
+  src: url('DentonCondensed-RegularItalic.woff2') format('woff2'),
+      url('DentonCondensed-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed M I';
+  src: url('DentonCondensed-MediumItalic.woff2') format('woff2'),
+      url('DentonCondensed-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed R';
+  src: url('DentonCondensed-Regular.woff2') format('woff2'),
+      url('DentonCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed T';
+  src: url('DentonCondensed-Thin.woff2') format('woff2'),
+      url('DentonCondensed-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed B';
+  src: url('DentonCondensed-Bold.woff2') format('woff2'),
+      url('DentonCondensed-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Condensed T I';
+  src: url('DentonCondensed-ThinItalic.woff2') format('woff2'),
+      url('DentonCondensed-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Bl';
+  src: url('DentonText-Black.woff2') format('woff2'),
+      url('DentonText-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Bl I';
+  src: url('DentonText-BlackItalic.woff2') format('woff2'),
+      url('DentonText-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Eb';
+  src: url('DentonText-ExtraBold.woff2') format('woff2'),
+      url('DentonText-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text B I';
+  src: url('DentonText-BoldItalic.woff2') format('woff2'),
+      url('DentonText-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text B';
+  src: url('DentonText-Bold.woff2') format('woff2'),
+      url('DentonText-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Eb I';
+  src: url('DentonText-ExtraBoldItalic.woff2') format('woff2'),
+      url('DentonText-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text R I';
+  src: url('DentonText-RegularItalic.woff2') format('woff2'),
+      url('DentonText-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text T I';
+  src: url('DentonText-ThinItalic.woff2') format('woff2'),
+      url('DentonText-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text R';
+  src: url('DentonText-Regular.woff2') format('woff2'),
+      url('DentonText-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text M I';
+  src: url('DentonText-MediumItalic.woff2') format('woff2'),
+      url('DentonText-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text M';
+  src: url('DentonText-Medium.woff2') format('woff2'),
+      url('DentonText-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text L';
+  src: url('DentonText-Light.woff2') format('woff2'),
+      url('DentonText-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text T';
+  src: url('DentonText-Thin.woff2') format('woff2'),
+      url('DentonText-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text L I';
+  src: url('DentonText-LightItalic.woff2') format('woff2'),
+      url('DentonText-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond B';
+  src: url('DentonTextCond-Bold.woff2') format('woff2'),
+      url('DentonTextCond-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond M I';
+  src: url('DentonTextCond-MediumItalic.woff2') format('woff2'),
+      url('DentonTextCond-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond Bl I';
+  src: url('DentonTextCond-BlackItalic.woff2') format('woff2'),
+      url('DentonTextCond-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond R';
+  src: url('DentonTextCond-Regular.woff2') format('woff2'),
+      url('DentonTextCond-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond Eb';
+  src: url('DentonTextCond-ExtraBold.woff2') format('woff2'),
+      url('DentonTextCond-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond R I';
+  src: url('DentonTextCond-RegularItalic.woff2') format('woff2'),
+      url('DentonTextCond-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond Eb I';
+  src: url('DentonTextCond-ExtraBoldItalic.woff2') format('woff2'),
+      url('DentonTextCond-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond L';
+  src: url('DentonTextCond-Light.woff2') format('woff2'),
+      url('DentonTextCond-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond L I';
+  src: url('DentonTextCond-LightItalic.woff2') format('woff2'),
+      url('DentonTextCond-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond M';
+  src: url('DentonTextCond-Medium.woff2') format('woff2'),
+      url('DentonTextCond-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond Bl';
+  src: url('DentonTextCond-Black.woff2') format('woff2'),
+      url('DentonTextCond-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond B I';
+  src: url('DentonTextCond-BoldItalic.woff2') format('woff2'),
+      url('DentonTextCond-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond T';
+  src: url('DentonTextCond-Thin.woff2') format('woff2'),
+      url('DentonTextCond-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text Cond T I';
+  src: url('DentonTextCond-ThinItalic.woff2') format('woff2'),
+      url('DentonTextCond-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond Bl I';
+  src: url('DentonTextXCond-BlackItalic.woff2') format('woff2'),
+      url('DentonTextXCond-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond Bl';
+  src: url('DentonTextXCond-Black.woff2') format('woff2'),
+      url('DentonTextXCond-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond B';
+  src: url('DentonTextXCond-Bold.woff2') format('woff2'),
+      url('DentonTextXCond-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond L';
+  src: url('DentonTextXCond-Light.woff2') format('woff2'),
+      url('DentonTextXCond-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond Eb I';
+  src: url('DentonTextXCond-ExtraBoldItalic.woff2') format('woff2'),
+      url('DentonTextXCond-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond R';
+  src: url('DentonTextXCond-Regular.woff2') format('woff2'),
+      url('DentonTextXCond-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond Eb';
+  src: url('DentonTextXCond-ExtraBold.woff2') format('woff2'),
+      url('DentonTextXCond-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond R I';
+  src: url('DentonTextXCond-RegularItalic.woff2') format('woff2'),
+      url('DentonTextXCond-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond L I';
+  src: url('DentonTextXCond-LightItalic.woff2') format('woff2'),
+      url('DentonTextXCond-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond T';
+  src: url('DentonTextXCond-Thin.woff2') format('woff2'),
+      url('DentonTextXCond-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond B I';
+  src: url('DentonTextXCond-BoldItalic.woff2') format('woff2'),
+      url('DentonTextXCond-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond M I';
+  src: url('DentonTextXCond-MediumItalic.woff2') format('woff2'),
+      url('DentonTextXCond-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond M';
+  src: url('DentonTextXCond-Medium.woff2') format('woff2'),
+      url('DentonTextXCond-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Denton Text XCond T I';
+  src: url('DentonTextXCond-ThinItalic.woff2') format('woff2'),
+      url('DentonTextXCond-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+  @font-face {
+    font-family: 'Denton XCondensed M I';
+    src: url('DentonXCondensed-MediumItalic.woff2') format('woff2'),
+        url('DentonXCondensed-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed L';
+    src: url('DentonXCondensed-Light.woff2') format('woff2'),
+        url('DentonXCondensed-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed Bl';
+    src: url('DentonXCondensed-Black.woff2') format('woff2'),
+        url('DentonXCondensed-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed B I';
+    src: url('DentonXCondensed-BoldItalic.woff2') format('woff2'),
+        url('DentonXCondensed-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed Eb I';
+    src: url('fonts/DentonXCondensed-ExtraBoldItalic.woff2') format('woff2'),
+        url('fonts/DentonXCondensed-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed B I';
+    src: url('DentonXCondensed-BlackItalic.woff2') format('woff2'),
+        url('DentonXCondensed-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed B';
+    src: url('DentonXCondensed-Bold.woff2') format('woff2'),
+        url('DentonXCondensed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed R';
+    src: url('DentonXCondensed-Regular.woff2') format('woff2'),
+        url('DentonXCondensed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed Eb';
+    src: url('DentonXCondensed-ExtraBold.woff2') format('woff2'),
+        url('DentonXCondensed-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed M';
+    src: url('DentonXCondensed-Medium.woff2') format('woff2'),
+        url('DentonXCondensed-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed R I';
+    src: url('DentonXCondensed-RegularItalic.woff2') format('woff2'),
+        url('DentonXCondensed-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed L I';
+    src: url('DentonXCondensed-LightItalic.woff2') format('woff2'),
+        url('DentonXCondensed-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed T';
+    src: url('DentonXCondensed-Thin.woff2') format('woff2'),
+        url('DentonXCondensed-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Denton XCondensed T I';
+    src: url('DentonXCondensed-ThinItalic.woff2') format('woff2'),
+        url('DentonXCondensed-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}

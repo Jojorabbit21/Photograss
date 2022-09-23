@@ -1,72 +1,3 @@
-@font-face {
-  font-family: "Adeston";
-  src: url("fonts/adeston-bw9b8.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-/* 
-@font-face {
-  font-family: 'PP Neue Montreal Book';
-  src: url("fonts/PPNeueMontreal-Bold.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PP Neue Montreal Medium';
-  src: url("fonts/PPNeueMontreal-Medium.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PP Neue Montreal Bold';
-  src: url("fonts/PPNeueMontreal-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PP Neue Montreal Italic';
-  src: url("fonts/PPNeueMontreal-Italic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'PP Neue Montreal Semibold Italic';
-  src: url("fonts/PPNeueMontreal-SemiBolditalic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'PP Neue Montreal Thin';
-  src: url("fonts/PPNeueMontreal-Thin.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Migra Eb';
-  src: url("fonts/Migra-Extrabold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Migra El';
-  src: url("fonts/Migra-Extralight.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Migra Italic Eb';
-  src: url("fonts/MigraItalic-ExtraboldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Migra Italic El';
-  src: url("fonts/MigraItalic-ExtralightItalic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-} */
-
-
 * {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -85,7 +16,6 @@ body {
   overflow-x: hidden;
 
   font-family: 'PP Neue Montreal Medium', sans-serif;
-
 }
 
 main, header, footer {
@@ -280,6 +210,37 @@ HEADER
 HOME SCREEN CAROUSEL 
 
 */
+/* .swiper-background {
+  position: relative;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-window {
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+} */
+
+h1.typo {
+  font-family: 'Denton XCondensed Eb I';
+  font-size: 30rem;
+  position: absolute;
+  top: 10vh;
+  left: 20vw;
+  z-index: 5;
+  color: #E2DED0;
+}
+
 .swiper {
   margin: 0;
   width: 100vw;

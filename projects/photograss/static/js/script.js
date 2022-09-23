@@ -133,6 +133,7 @@ if(window.location.pathname == '/snaps') {
 
 if (window.location.pathname == '/home') {
   const swiper = new Swiper('.swiper', {
+    effect: "fade",
     autoplay: {
       disableOnInteraction: false,
       delay: 3000,
@@ -159,6 +160,8 @@ if (window.location.pathname == '/home') {
   // const maxLength = document.querySelector(".swiper-wrapper").getAttribute("max-length");
   // swiper.on('slideNextTransitionStart', function() {
   // });
+  swiper.on('slideChangeTransitionStart', () => {
+  });
 }
 
 
