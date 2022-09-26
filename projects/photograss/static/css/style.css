@@ -70,6 +70,7 @@ main, header, footer {
 
     --project-inner-padding: 6rem;
     --project-card-fontsize: 10rem;
+    --project-card-blank: 2rem;
     --project-card-height: 11rem;
     --project-card-padding: 1rem;
 
@@ -82,7 +83,12 @@ main, header, footer {
     --project-title-margin: 4rem;
     --project-desc-fontsize: 0.9rem;
 
-    --swiper-pagination-fontsize: 4rem;
+    --swiper-pagination-size: 12px;
+    --swiper-pagination-color: #fff;
+    --swiper-pagination-active-color: #fff;
+    --swiper-pagination-border-color: #fff;
+
+    --swiper-button-size: 2rem;
   }
 }
 /*
@@ -265,7 +271,7 @@ h1.typo {
 .swiper {
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
 
   /* Disable interaction */
   user-select: none;
@@ -286,17 +292,48 @@ h1.typo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 .swiper-pagination {
-  width: auto;
-  height: 10%;
+  margin-bottom: 1vh;
 }
 
 .swiper-pagination-bullet {
-  width: fit-content;
-  height: fit-content;
-  background: transparent;
+  width: var(--swiper-pagination-size);
+  height: var(--swiper-pagination-size);
+  border-radius: 50%;
+
+  background-color: var(--swiper-pagination-color);
+  border: 1px solid var(--swiper-pagination-border-color);
+  opacity: 0.3;
+
+  transition: .5s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.swiper-pagination-bullet-active {
+  --x: 3;
+  width: calc(var(--swiper-pagination-size) * var(--x));
+  border-radius: calc((var(--swiper-pagination-size) * var(--x)) / 2);
+  background-color: var(--swiper-pagination-color);
+  opacity: 1;
+}
+
+.swiper-button {
+  width: 5rem;
+  height: 5rem; 
+  margin: 0 2rem;
+  border-radius: 50%;
+  color: white;
+  transition: .2s all ease;
+}
+
+.swiper-button:hover {
+  background-color: rgba(0,0,0,.3);
+}
+
+.swiper-button::after {
+  font-size: 2rem;
 }
 
 
