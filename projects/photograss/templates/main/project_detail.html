@@ -8,9 +8,19 @@
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
   </ul>
   <!-- Mirrors the content above -->
   <ul class="marquee" aria-hidden="true">
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
+    <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
     <li>{{ project.title }}</li>
@@ -21,6 +31,7 @@
 <img class="project-thumbnail" src="/media/{{ project.thumbnail }}"/>
 <section>
   <div class="project-detail-container">
+    <div class="project-title">{{project.title}}</div>
     <div class="project-desc">{{project.desc}}</div>
     <div class="project-photo-container">
       {% for image in images %}

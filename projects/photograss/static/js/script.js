@@ -1,6 +1,8 @@
 // https://codepen.io/ig_design/pen/XWXZaGb 풀스크린 메뉴 pure css
 // https://front.codes/ 좋은자료 많아보임
 
+let quoteLoaded = 0;
+
 function InitAnimate(element, dir, start, end, duration, easing, fill) {
   if (dir==0) {
     for(let i=0; i<element.length; i++) {
@@ -38,19 +40,50 @@ document.addEventListener('DOMContentLoaded', () => {
       let target = splitText[i].innerHTML;
       parent.replaceChildren();
       let div = document.createElement('div');
+      let wrap = document.createElement('div');
       let tag = splitText[i].tagName;
+      wrap.className = 'quoteWrapper';
       div.className = 'quoteBox quote';
       for (let i in target) {
+        let t = target[i];
         let child = document.createElement(tag);
         child.innerText = target[i];
+        if (t == " ") {
+          child.classList = '__blank';
+        }
         div.insertAdjacentElement('beforeEnd', child);
       }
-      parent.insertAdjacentElement('beforeEnd', div);
-      let second = parent.firstChild.cloneNode(true);
-      second.className = 'quoteBox quote quote-second';
-      parent.insertAdjacentElement("beforeEnd", second);
+      wrap.append(div);
+      div = div.cloneNode(true);
+      div.className = 'quoteBox quote quote-second';
+      wrap.append(div);
+      parent.insertAdjacentElement('beforeEnd', wrap);
     }
   } catch(err) { }
+});
+
+
+window.addEventListener('load', function() {
+  if (window.location.pathname.indexOf('/projects') != -1 || window.location.pathname.indexOf('/commercial') != -1)
+  {
+    if(quoteLoaded == 0) {
+      let q = document.querySelectorAll('.quoteWrapper');
+      for (let i=0; i<q.length; i++) {
+        setTimeout(() => {
+          q[i].animate([
+            { transform: 'translate(0, 100%)' },
+            { transform: 'translate(0, 0)' }
+          ],
+          {
+            duration: 700,
+            easing: "ease",
+            fill: "forwards"
+          });
+          quoteLoaded ++;
+        }, 150*i);
+      }
+    }
+  }
 });
 
 /* Split Text Animation */
@@ -58,18 +91,24 @@ try {
   let quoteContainers = document.querySelectorAll(".quoteContainer");
   [].forEach.call(quoteContainers, (quoteContainer) => {
     quoteContainer.addEventListener("mouseenter", function() {
-      let quoteBox = quoteContainer.children;
-      let Letters = quoteBox[0].children;
-      let LettersAlt = quoteBox[1].children;
-      InitAnimate(Letters, 1, "0", "-100%", 500, "ease", "forwards");
-      InitAnimate(LettersAlt, 1, "0", "-100%", 500, "ease", "forwards");
+      if(quoteLoaded === quoteContainers.length) {
+        let quoteWrapper = quoteContainer.children;
+        let quoteBox = quoteWrapper[0].children;
+        let Letters = quoteBox[0].children;
+        let LettersAlt = quoteBox[1].children;
+        InitAnimate(Letters, 1, "0", "-100%", 500, "ease", "forwards");
+        InitAnimate(LettersAlt, 1, "0", "-100%", 500, "ease", "forwards");
+      }
     });
     quoteContainer.addEventListener("mouseleave", function() {
-      let quoteBox = quoteContainer.children;
-      let Letters = quoteBox[0].children;
-      let LettersAlt = quoteBox[1].children;
-      InitAnimate(Letters, 1, "-100%", "0", 500, "ease", "forwards");
-      InitAnimate(LettersAlt, 1, "-100%", "0", 500, "ease", "forwards");
+      if(quoteLoaded === quoteContainers.length) {
+        let quoteWrapper = quoteContainer.children;
+        let quoteBox = quoteWrapper[0].children;
+        let Letters = quoteBox[0].children;
+        let LettersAlt = quoteBox[1].children;
+        InitAnimate(Letters, 1, "-100%", "0", 500, "ease", "forwards");
+        InitAnimate(LettersAlt, 1, "-100%", "0", 500, "ease", "forwards");
+      }
     });
   });
 } catch(err) { }
@@ -170,3 +209,43 @@ if (window.location.pathname == '/home') {
 /* Smooth page transition */
 // barba.js 사용하는 듯? https://ihatetomatoes.net/page-transitions-tutorial-barba-with-css/
 // https://www.youtube.com/watch?v=aMucZErEdZg&ab_channel=DesignCourse 유튜브 강의 보고 따라해보기
+
+let progressCreated = false;
+window.onscroll = function() {
+  onProgress();
+}
+
+function onProgress() {
+  if(window.location.pathname.indexOf('/projects/') != -1 || window.location.pathname.indexOf('/commercial/') != -1)
+  {
+    let headerHeight = document.querySelector('.navbar-container').offsetHeight;
+    let marqueeHeight = document.querySelector('.marquee-wrap').offsetHeight;
+    if(window.scrollY > headerHeight + marqueeHeight) {
+      if(!progressCreated) {
+        let main = document.querySelector('main');
+        let progressContainer = document.createElement('div');
+        let progressBar = document.createElement('div');
+        progressContainer.className = 'progress-container';
+        progressBar.className = 'progress-bar';
+        progressContainer.appendChild(progressBar);
+        main.prepend(progressContainer);
+        progressCreated = true;
+      }
+      let progressContainer = document.querySelector('.progress-container');
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll/height) * 100;
+      progressContainer.style.width = `${scrolled}%`;
+    }
+    else if(window.scrollY < headerHeight + marqueeHeight) {
+      if(progressCreated) {
+        let progressContainer = document.querySelector('.progress-container');
+        progressContainer.remove();
+        progressCreated = false;
+      }
+    }
+  } 
+  else {
+    return false;
+  }
+}

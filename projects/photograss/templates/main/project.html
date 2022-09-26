@@ -1,6 +1,6 @@
 {% extends 'common/base.html' %}
 {% block content %}
-  <div class="projects-container">
+  <div class="projects projects-container">
     {% for project in projects %}
       <div class="project-card quoteContainer" onclick='location.href="{% url "main:project_detail" project.title %}";' pk={{ project.id }}>
         <a class="project-item split-text">{{ project.title }}</a>
