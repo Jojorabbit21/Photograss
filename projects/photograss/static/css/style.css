@@ -27,6 +27,10 @@ main, header, footer {
 }
 
 /* SPLITTEXT */
+.split-text {
+  opacity: 0;
+}
+
 .quoteContainer { 
   position: relative;
   overflow: hidden;
@@ -46,11 +50,13 @@ main, header, footer {
     --side-padding: 192px;
 
     --logo-width: 200px;
-    --header-height: 5rem;
+    --header-height: 3rem;
     --header-menu-fontsize: 1rem;
     --header-logosize: 1rem;
     --header-padding: 192px;
     --header-right-padding: 2rem;
+
+    --progress-bar-height: 0.3rem;
 
     --instagram: 1.4rem;
 
@@ -62,16 +68,18 @@ main, header, footer {
 
     --masonry-margin: 7rem;
 
-    --project-inner-padding: 10rem;
+    --project-inner-padding: 6rem;
     --project-card-fontsize: 10rem;
-    --project-card-height: 9rem;
+    --project-card-height: 11rem;
     --project-card-padding: 1rem;
 
     --marquee-height: 5rem;
-    --marquee-fontsize: 3rem;
-    --marquee-padding: 1rem;
+    --marquee-fontsize: 2rem;
+    --marquee-padding: 0.4rem;
     --marquee-text-margin: 3rem;
 
+    --project-title-fontsize: 7rem;
+    --project-title-margin: 4rem;
     --project-desc-fontsize: 0.9rem;
 
     --swiper-pagination-fontsize: 4rem;
@@ -181,6 +189,19 @@ HEADER
 }
 .instagram-icon:visited {
   color: inherit;
+}
+
+/* HEADER > PROGRESS BAR */
+.progress-container {
+  width: 100%;
+  height: var(--progress-bar-height);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.progress-bar {
+  height: 100%;
+  background: rgb(1, 228, 103);
 }
 
 /* FOOTER */
@@ -296,7 +317,6 @@ PROJECT LIST SCREEN
   box-sizing: border-box;
 
   position: relative;
-  background: #FFC700;
 
   display: flex;
   flex-direction: column;
@@ -304,21 +324,54 @@ PROJECT LIST SCREEN
   align-items: center;
 }
 
+.projects.projects-container {
+  background: #FFC700;
+}
+.commercial.projects-container {
+  background: #00793c;
+}
+
 .project-card {
   cursor: pointer;
   width: fit-content;
   height: var(--project-card-height);
   text-align: center;
-  padding: var(--project-card-padding) 0;
+  overflow: hidden;
 }
 
-.project-card a {
+.project-card .quoteWrapper {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  transform: translate(0, 100%);
+}
+
+.project-card .quote a {
   font-size: var(--project-card-fontsize);
   text-decoration: none;
-  color: black;
 }
 
-.quote-second {
+.quote:nth-child(1) {
+  font-family: 'PP Neue Montreal Medium';
+}
+
+.quote:nth-child(2) {
+  /* font-family: 'Denton XCondensed Eb I'; */
+  font-family: 'PP Editorial New I';
+}
+
+.projects .project-card .quote {
+  color: black;
+}
+.commercial .project-card .quote{
+  color: white;
+}
+.commercial .project-card .quote:nth-child(2) {
+  color: #ffcc15;
+}
+
+.project-card .quote a.__blank {
+  width: 2rem;
 }
 
 /*
@@ -338,6 +391,7 @@ PROJECT DETAIL PAGE
   height: fit-content;
   background: black;
   box-sizing: border-box;
+  padding: var(--marquee-padding);
 }
 .marquee {
   list-style: none;
@@ -346,11 +400,12 @@ PROJECT DETAIL PAGE
   justify-content: space-around;
   gap: var(--marquee-text-margin);
   width: fit-content;
-  height: fit-content;
+  height: auto;
   margin: 0;
 
   color: white;
   font-size: var(--marquee-fontsize);
+  font-family: 'PP Editorial New Ul I';
 
   animation: marquee 20s linear infinite;
 }
@@ -393,6 +448,15 @@ PROJECT DETAIL PAGE
   padding: 0 var(--side-padding);
   position: relative;
   box-sizing: border-box;
+}
+.project-title {
+  width: 100%;
+  text-align: center;
+  font-size: var(--project-title-fontsize);
+  font-family: 'PP Neue Montreal Medium';
+  box-sizing: border-box;
+  margin-bottom: var(--project-title-margin);
+  letter-spacing: -.1rem;
 }
 .project-desc {
   margin: 1rem 0;
