@@ -74,6 +74,11 @@ main, header, footer {
     --project-card-height: 11rem;
     --project-card-padding: 1rem;
 
+    --project-navigation-height: 10rem;
+    --project-navigation-header: 3rem;
+    --project-navigation-body: 6rem;
+    --project-navigation-padding: 1.5rem;
+
     --marquee-height: 5rem;
     --marquee-fontsize: 2rem;
     --marquee-padding: 0.4rem;
@@ -324,14 +329,17 @@ h1.typo {
   height: 5rem; 
   margin: 0 2rem;
   border-radius: 50%;
+  border: 0px none transparent;
+  background: transparent;
   color: white;
   transition: .2s all ease;
 }
-
 .swiper-button:hover {
   background-color: rgba(0,0,0,.3);
 }
-
+.swiper-button:active {
+  color:#FFC700;
+}
 .swiper-button::after {
   font-size: 2rem;
 }
@@ -374,6 +382,7 @@ PROJECT LIST SCREEN
   height: var(--project-card-height);
   text-align: center;
   overflow: hidden;
+  padding: var(--project-card-padding) 0;
 }
 
 .project-card .quoteWrapper {
@@ -518,6 +527,44 @@ PROJECT DETAIL PAGE
   -webkit-touch-callout: none;
 }
 
+.project-navigation-container { 
+  position: relative;
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+  border-top: 1px solid black;
+}
+.project-navigation {
+  width: 50%;
+  position: relative;
+  padding: var(--project-navigation-padding);
+  box-sizing: border-box;
+}
+.project-navigation-prev {
+  text-align: left;
+}
+.project-navigation-next {
+  text-align: right;
+}
+.project-navigation-top {
+  font-family: 'PP Neue Montreal Medium';
+  font-size: var(--project-navigation-header);
+}
+.project-navigation-body {
+  font-family: 'PP Neue Montreal Medium';
+  font-size: var(--project-navigation-body);
+  cursor: pointer;
+  color: black;
+}
+.project-navigation-body:visited {
+  color: inherit;
+  outline-width: 2px;
+}
+
 /*
 
 ! ------------ SNAPSHOTS PAGE STYLES ------------------!
@@ -609,6 +656,9 @@ PROJECT DETAIL PAGE
   justify-content: center;
   z-index: 3;
   
+  filter: blur(14px);
+  -webkit-filter: blur(14px);
+
   transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
 }
@@ -621,14 +671,15 @@ PROJECT DETAIL PAGE
   line-height: 130%;
   text-align: center;
   word-wrap: normal;
+  
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
 }
 
-.blur {
+.blur p {
   opacity: 0;
-  /* backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px); */
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
+  filter: blur(14px);
+  -webkit-filter: blur(14px);
 }
 
 

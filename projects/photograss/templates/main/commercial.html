@@ -2,7 +2,7 @@
 {% block content %}
   <div class="commercial projects-container">
     {% for project in projects %}
-      <div class="project-card quoteContainer" onclick='location.href="{% url "main:commercial_detail" project.title %}";' pk={{ project.id }}>
+      <div class="project-card quoteContainer" onclick='location.href="{% url "main:commercial_detail" project.id %}";' pk={{ project.id }}>
         <a class="project-item split-text">{{ project.title }}</a>
       </div>
     {% endfor %}

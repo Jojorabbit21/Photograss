@@ -51,17 +51,27 @@ def project_main(request):
   }
   return render(request, 'main/project.html', context)
 
-def project_detail(request, project_name):
+def project_detail(request, project_id):
   projects = PersonalProject.objects.all().values()
-  project = get_object_or_404(PersonalProject, title=project_name)
+  project = get_object_or_404(PersonalProject, pk=project_id)
+  try:
+    project_next = PersonalProject.objects.get(pk=(project_id + 1))
+  except:
+    project_next = None
+  try:
+    project_prev = PersonalProject.objects.get(pk=(project_id - 1))
+  except:
+    project_prev = None
 
-  images = PersonalProject.objects.filter(title=project_name).prefetch_related('personal_project')[0]
+  images = PersonalProject.objects.filter(pk=project_id).prefetch_related('personal_project')[0]
   img = images.personal_project.all()
   request.project_path = str(request.path).replace("/projects/","")
   context = {
     'domain': domain,
     'projects': projects,
     'project': project,
+    'project_prev': project_prev,
+    'project_next': project_next,
     'images': img,
   }
   return render(request, 'main/project_detail.html', context)
@@ -74,17 +84,27 @@ def commercial_main(request):
   }
   return render(request, 'main/commercial.html', context)
 
-def commercial_detail(request, project_name):
+def commercial_detail(request, project_id):
   projects = CommercialProject.objects.all().values()
-  project = get_object_or_404(CommercialProject, title=project_name)
+  project = get_object_or_404(CommercialProject, pk=project_id)  
+  try:
+    project_next = PersonalProject.objects.get(pk=(project_id + 1))
+  except:
+    project_next = None
+  try:
+    project_prev = PersonalProject.objects.get(pk=(project_id - 1))
+  except:
+    project_prev = None
   
-  images = CommercialProject.objects.filter(title=project_name).prefetch_related('commercial_project')[0]
+  images = CommercialProject.objects.filter(pk=project_id).prefetch_related('commercial_project')[0]
   img = images.commercial_project.all()
   
   context = {
     'domain': domain,
     'projects': projects,
     'project': project,
+    'project_prev': project_prev,
+    'project_next': project_next,
     'images': img,
   }
   return render(request, 'main/commercial_detail.html', context)

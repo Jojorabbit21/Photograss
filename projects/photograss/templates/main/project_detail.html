@@ -29,17 +29,29 @@
   </ul>
 </div>
 <img class="project-thumbnail" src="/media/{{ project.thumbnail }}"/>
-<section>
-  <div class="project-detail-container">
-    <div class="project-title">{{project.title}}</div>
-    <div class="project-desc">{{project.desc}}</div>
-    <div class="project-photo-container">
-      {% for image in images %}
-      <div class="project-photo-box" data-scroll>
-        <img class="project-photo" src="/media/{{image.image}}"/>
-      </div>
-      {% endfor %}
+<div class="project-detail-container">
+  <div class="project-title">{{project.title}}</div>
+  <div class="project-desc">{{project.desc}}</div>
+  <div class="project-photo-container">
+    {% for image in images %}
+    <div class="project-photo-box" data-scroll>
+      <img class="project-photo" src="/media/{{image.image}}"/>
     </div>
+    {% endfor %}
   </div>
-</section>
+</div>
+<div class="project-navigation-container">
+  <div class="project-navigation project-navigation-prev">
+    {% if project_prev != None %}
+      <div class="project-navigation-top">← SEE PREVIOUS</div>
+      <a href="{% url 'main:project_detail' project_prev.id %}" class="project-navigation-body">{{ project_prev.title }}</a>
+    {% endif %}
+  </div>
+  <div class="project-navigation project-navigation-next">
+    {% if project_next != None %}
+      <div class="project-navigation-top">SEE NEXT →</div>
+      <a href="{% url 'main:project_detail' project_next.id %}" class="project-navigation-body">{{ project_next.title }}</a>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

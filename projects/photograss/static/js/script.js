@@ -84,6 +84,26 @@ window.addEventListener('load', function() {
       }
     }
   }
+  else if (window.location.pathname.indexOf('/snaps') != -1) {
+    let phrase = document.querySelector('.phrase-box');
+    phrase.animate(
+      [
+        { 
+          filter: "blur(10px)", 
+          opacity: 0
+        },
+        {
+          filter: "blur(0px)",
+          opacity: 1
+        }
+      ],
+      {
+        duration: 1000,
+        easing: "ease",
+        fill: "forwards"
+      }
+    );
+  }
 });
 
 /* Split Text Animation */
