@@ -694,3 +694,23 @@ Testing
 
 
 */
+
+
+/* PAGE LOADING PERCENT */
+/* #overlay {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+  z-index: 999;
+}
+
+#overlay-p {
+  font-size: 10rem;
+  font-family: 'Denton XCondensed Eb I';
+  color: white;
+} */
