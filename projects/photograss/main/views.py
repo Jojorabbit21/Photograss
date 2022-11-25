@@ -108,3 +108,6 @@ def commercial_detail(request, project_id):
     'images': img,
   }
   return render(request, 'main/commercial_detail.html', context)
+
+def about(request):
+  return render(request, 'main/about.html')
