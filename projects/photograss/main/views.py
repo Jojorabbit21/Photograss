@@ -63,8 +63,7 @@ def project_detail(request, project_id):
   except:
     project_prev = None
 
-  images = PersonalProject.objects.filter(pk=project_id).prefetch_related('personal_project')[0]
-  img = images.personal_project.all()
+  images = PersonalPhotos.objects.filter(post_id=project_id).values('image')
   request.project_path = str(request.path).replace("/projects/","")
   context = {
     'domain': domain,
@@ -72,7 +71,7 @@ def project_detail(request, project_id):
     'project': project,
     'project_prev': project_prev,
     'project_next': project_next,
-    'images': img,
+    'images': images,
   }
   return render(request, 'main/project_detail.html', context)
 
@@ -88,23 +87,22 @@ def commercial_detail(request, project_id):
   projects = CommercialProject.objects.all().values()
   project = get_object_or_404(CommercialProject, pk=project_id)  
   try:
-    project_next = PersonalProject.objects.get(pk=(project_id + 1))
+    project_next = CommercialProject.objects.get(pk=(project_id + 1))
   except:
     project_next = None
   try:
-    project_prev = PersonalProject.objects.get(pk=(project_id - 1))
+    project_prev = CommercialProject.objects.get(pk=(project_id - 1))
   except:
     project_prev = None
   
-  images = CommercialProject.objects.filter(pk=project_id).prefetch_related('commercial_project')[0]
-  img = images.commercial_project.all()
-  
+  images = CommercialPhotos.objects.filter(post_id=project_id).values('image')
+  request.project_path = str(request.path).replace("/commercial/","")
   context = {
     'domain': domain,
     'projects': projects,
     'project': project,
     'project_prev': project_prev,
     'project_next': project_next,
-    'images': img,
+    'images': images,
   }
   return render(request, 'main/commercial_detail.html', context)

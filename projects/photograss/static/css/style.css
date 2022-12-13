@@ -68,8 +68,9 @@ main, header, footer {
 
     --masonry-margin: 7rem;
 
-    --project-inner-padding: 6rem;
-    --project-card-fontsize: 10rem;
+    --project-inner-padding: 6rem;    
+    --project-card-fontsize-first: 9rem;
+    --project-card-fontsize-second: 9rem;
     --project-card-blank: 2rem;
     --project-card-height: 11rem;
     --project-card-padding: 1rem;
@@ -399,11 +400,13 @@ PROJECT LIST SCREEN
 
 .quote:nth-child(1) {
   font-family: 'PP Neue Montreal Medium';
+  font-size: var(--project-card-fontsize-first);
 }
 
 .quote:nth-child(2) {
   /* font-family: 'Denton XCondensed Eb I'; */
   font-family: 'PP Editorial New I';
+  font-size: var(--project-card-fontsize-second);
 }
 
 .projects .project-card .quote {
@@ -481,8 +484,17 @@ PROJECT DETAIL PAGE
 }
 /* PROJECT THUMBNAIL SECTION */
 .project-thumbnail {
-  width: 100vw;
-  height: auto;
+  width: 100vw;  
+  height: 80vh;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+}
+.img-loaded {
+  --duration: 1s;
+  opacity: 1;
+  transition: opactiy var(--duration) linear;
+  -webkit-transition: opacity var(--duration) linear;
 }
 /* PROJECT DETAIL SECTION */
 .project-detail-container {

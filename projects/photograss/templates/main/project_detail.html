@@ -28,7 +28,7 @@
     <li>{{ project.title }}</li>
   </ul>
 </div>
-<img class="project-thumbnail" src="/media/{{ project.thumbnail }}"/>
+<img class="project-thumbnail" onload="this.className += ' img-loaded'" src="/media/{{ project.thumbnail }}"/>
 <div class="project-detail-container">
   <div class="project-title">{{project.title}}</div>
   <div class="project-desc">{{project.desc}}</div>
